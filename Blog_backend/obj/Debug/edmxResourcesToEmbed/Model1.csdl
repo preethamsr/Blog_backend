@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserblogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="user_details">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Guid" Nullable="false" />
+    <Property Name="First_name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Middle_name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Last_name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Dob" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Created_on" Type="DateTime" Precision="3" />
+    <Property Name="Verification" Type="Boolean" />
+    <Property Name="Password_reset_OTP" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="userblog" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="user_details" EntityType="Self.user_details" />
+  </EntityContainer>
+</Schema>
